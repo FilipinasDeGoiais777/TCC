@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="libs/MaterialDesign-Webfont-master/css/materialdesignicons.css">
+    <link rel="stylesheet" href="libs/sweetalert2/dist/sweetalert2.css">
+    <link rel="stylesheet" href="libs/DataTables/datatables.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-3">
+        <a class="navbar-brand text-white">Services</a>
+    </nav>
+
+    <div class="container mt-5" id="conteudo">
+        <div class="row mt-5">
+            <div class="col-12 mt-3">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <div class="card-title row">
+                            <div class="col-12 col-md-9">
+                                <h4 class="text-dark">Gerenciar Serviços</h4>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button type="button" class="btn btn-dark btn-new btn-block" data-toggle="modal" data-target="#cadastro"><i class="mdi mdi-plus-circle"></i> Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="table-servico">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">ID</th>
+                                        <th scope="col" class="text-center">Nome</th>
+                                        <th scope="col" class="text-center">Tipo</th>
+                                        <th scope="col" class="text-center">Bairro</th>
+                                        <th scope="col" class="text-center">Rua</th>
+                                        <th scope="col" class="text-center">Número</th>
+                                        <th scope="col" class="text-center">Telefone</th>
+                                        <th scope="col" class="text-center">Celular</th>
+                                        <th scope="col" class="text-center">Email</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-servico" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="my-modal-title">Title</h5>
+                        <button class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Content</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="mdi mdi-close-circle"></i> Fechar</button>
+                        <button type="button" class="btn btn-success btn-save"><i class="mdi mdi-content-save"></i> Salvar mudanças</button>
+                        <button type="button" class="btn btn-primary btn-update"><i class="mdi mdi-content-save"></i> Salvar mudanças</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cadastro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="NOME" id="NOME" placeholder="Nome da empresa" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="TIPO" id="TIPO" placeholder="Tipo serviço" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="BAIRRO" id="BAIRRO" placeholder="Bairro" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="RUA" id="RUA" placeholder="Rua" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="NUMERO" id="NUMERO" placeholder="Número" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="TELEFONE" id="TELEFONE" placeholder="Telefone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="CELULAR" id="CELULAR" placeholder="Celular" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="EMAIL" id="EMAIL" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-save">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3 border-top">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center text-dark">
+                    Todos os direitos reservados aos alunos Alice, Filipe e Milena.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/function-menu.js"></script>
+    <script src="libs/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="libs/DataTables/datatables.js"></script>
+    <script src="src/administracao/controle/new-adm.js"></script>
+    <script src="src/administracao/controle/create-adm.js"></script>
+    <script src="src/administracao/controle/list-adm.js"></script>
+    <script src="src/administracao/controle/view-adm.js"></script>
+    <script src="src/administracao/controle/edit-adm.js"></script>
+    <script src="src/administracao/controle/update-adm.js"></script>
+    <script src="src/administracao/controle/delete-adm.js"></script>
+</body>
+
+</html>

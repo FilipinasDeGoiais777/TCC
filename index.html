@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="libs/MaterialDesign-Webfont-master/css/materialdesignicons.css">
+    <link rel="stylesheet" href="libs/sweetalert2/dist/sweetalert2.css">
+    <link rel="stylesheet" href="libs/DataTables/datatables.css">
+</head>
+
+<body style="background-color: #9FE1BC;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark d-flex justify-content-between">
+        <a class="navbar-brand" href="#">Services</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#telacliente">
+                    Seja nosso cliente!
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="d-flex">
+        <div class="container mt-5 col-5" id="conteudo2">
+            <img class="img-fluid" src="mimis.png" alt="some text" width=710 height=700>
+        </div>
+        <div class="container mt-5 col-5 " id="conteudo">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form id="form-list">
+                        <div class="form-group">
+                            <blockquote class="blockquote">
+                                <label>Pesquise o serviço que deseja encontrar:</label>
+                                <label>Você pode pesquisar por nome, tipo de serviço ou bairro.</label>
+                            </blockquote>
+                            <input type="text" name="nome" id="nome" class="form-control">
+                        </div>
+                        <button class="btn btn-warning btn-pesquisar" id="pesquisar">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3 border-top bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <blockquote class="blockquote">
+                    <p class="text-center text-white">
+                        Todos os direitos reservados aos alunos Alice, Filipe e Milena.
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="telacliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="NOME" id="NOME" placeholder="Nome da empresa" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="TIPO" id="TIPO" placeholder="Tipo serviço" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="BAIRRO" id="BAIRRO" placeholder="Bairro" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="RUA" id="RUA" placeholder="Rua" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="NUMERO" id="NUMERO" placeholder="Número" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="TELEFONE" id="TELEFONE" placeholder="Telefone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="CELULAR" id="CELULAR" placeholder="Celular" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="EMAIL" id="EMAIL" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-save">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="libs/DataTables/datatables.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="libs/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="js/function-menu.js"></script>
+    <script src="src/servico/controle/filter-servico.js"></script>
+    <script src="src/servico/controle/view-servico.js"></script>
+    <script src="src/servico/controle/create-servico.js"></script>
+    <script src="src/servico/controle/list-servico.js"></script>
+</body>
+
+</html>
