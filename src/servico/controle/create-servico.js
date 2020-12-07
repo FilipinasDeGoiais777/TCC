@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#btn-save').click(function(e) {
         e.preventDefault()
 
-        let dados = $('#telacliente').serialize()
+        let dados = $('#form-cad').serialize()
 
 
         $.ajax({
@@ -18,6 +18,7 @@ $(document).ready(function() {
                     type: dados.tipo,
                     confirmButtonText: 'OK'
                 })
+                $("#telacliente").modal("hide")
             }
         })
     })
