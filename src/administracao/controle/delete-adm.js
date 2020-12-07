@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('#table-adm').on('click', 'button.btn-delete', function(e) {
         e.preventDefault()
 
-        let idcategoria = `ID=${$(this).attr('ID')}`
+        let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
             title: 'Services',
@@ -18,7 +18,7 @@ $(document).ready(function() {
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    data: idcategoria,
+                    data: ID,
                     url: 'src/administracao/modelo/delete-adm.php',
                     success: function(dados) {
                         Swal.fire({
@@ -28,7 +28,7 @@ $(document).ready(function() {
                             confirmButtonText: 'OK'
                         })
 
-                        $('#modal-adm').modal('hide')
+                        $('#cadastro').modal('hide')
                         $('#table-adm').DataTable().ajax.reload()
                     }
                 })

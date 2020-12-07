@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    $('.btn-save').click(function(e) {
+
+    $('#btn-save').click(function(e) {
         e.preventDefault()
 
         let dados = $('#form-adm').serialize()
@@ -9,7 +10,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: dados,
-            url: 'src/adm/modelo/create-adm.php',
+            url: 'src/administracao/modelo/create-adm.php',
             success: function(dados) {
                 Swal.fire({
                     title: 'Services',
@@ -17,7 +18,7 @@ $(document).ready(function() {
                     type: dados.tipo,
                     confirmButtonText: 'OK'
                 })
-                $('#modal-servico').modal('hide')
+                $('#cadastro').modal('hide')
                 $('#table-servico').DataTable().ajax.reload()
             }
         })

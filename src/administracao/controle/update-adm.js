@@ -1,14 +1,8 @@
 $(document).ready(function() {
-    $('.btn-update').click(function(e) {
+    $('#table-adm').on('click', 'button.btn-edit', function(e) {
         e.preventDefault()
 
         let dados = $('#form-adm').serialize()
-
-        $('input[type=checkbox]').each(function() {
-            if (!this.checked) {
-                dados += '&' + this.name + '=off'
-            }
-        })
 
         $.ajax({
             type: 'POST',
@@ -24,7 +18,7 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })
 
-                $('#modal-adm').modal('hide')
+                $('#cadastro').modal('hide')
                 $('#table-adm').DataTable().ajax.reload()
             }
         })

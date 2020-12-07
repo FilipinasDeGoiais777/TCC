@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#table-servico').DataTable({
+    $('#table-adm').DataTable({
         "processing": true,
         "serverSide": true,
         "ajax": {

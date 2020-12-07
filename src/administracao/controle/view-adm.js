@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#saiba').click(function(e) {
+    $('.btn-view').click(function(e) {
         e.preventDefault()
 
         $('.modal-title').empty()
@@ -8,18 +8,18 @@ $(document).ready(function() {
 
         $('.modal-title').append('Dados do serviço')
 
-        let ID = `ID=${$(this).attr('ID')}`
+        let ID = `ID=${$(this).attr('id')}`
 
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
             assync: true,
             data: ID,
-            url: 'src/servico/modelo/view-servico.php',
+            url: 'src/servico/modelo/view-adm.php',
             success: function(dados) {
                 if (dados.tipo == "success") {
                     $('#conteudo').empty()
-                    `<div class="modal-body">
+                    let servicos = `<div class="modal-body">
                         <div class="form-group">
                             <input type="text" placeholder="Nome" class="form-control" value="${servico.NOME}">
                         </div>
@@ -47,6 +47,7 @@ $(document).ready(function() {
                     </div>`
 
                     $('#conteudo').html(servicos)
+                    $('#cadastro').modal('show')
                 } else {
                     alert(dados.mensagem)
                 }
