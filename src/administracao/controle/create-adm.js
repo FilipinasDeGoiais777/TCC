@@ -2,9 +2,11 @@ $(document).ready(function() {
 
     $('#btn-save').click(function(e) {
         e.preventDefault()
+        $('.modal-title').empty()
+        $('.modal-body').empty()
+        $('#btn-save').show()
 
         let dados = $('#form-adm').serialize()
-        console.log(dados)
 
         $.ajax({
             type: 'POST',
@@ -20,6 +22,8 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })
                 $('#cadastro').modal('hide')
+                $('.btn-update').hide()
+                $('#btn-save').show()
                 $('#table-servico').DataTable().ajax.reload()
             }
         })

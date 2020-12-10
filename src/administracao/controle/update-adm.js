@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#table-adm').on('click', 'button#btn-save', function(e) {
+    $('#table-adm').on('click', 'button.btn-update', function(e) {
         e.preventDefault()
 
         let dados = $('#form-adm').serialize()

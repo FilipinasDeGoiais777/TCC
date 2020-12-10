@@ -2,6 +2,8 @@ $(document).ready(function() {
     $('#btn-save').click(function(e) {
         e.preventDefault()
 
+
+
         let dados = $('#form-cad').serialize()
 
 

@@ -16,27 +16,45 @@ $(document).ready(function() {
             assync: true,
             data: ID,
             url: 'src/administracao/modelo/view-adm.php',
-            success: function(dado) {
-                if (dado.tipo == "success") {
-                    $('.modal-body').load('src/administracao/visao/form-adm.html', function() {
-                        $('#nome').val(dado.dados.nome)
-                        $('#dataagora').val(dado.dados.datacriacao)
+            success: function(dados) {
+                if (dados.tipo == "success") {
+                    let servicos = `<div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome" class="form-control" value="${dados.dados.NOME}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Tipo serviço" class="form-control" value="${dados.dados.TIPO}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Bairro" class="form-control" value="${dados.dados.BAIRRO}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Rua" class="form-control" value="${dados.dados.RUA}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Número" class="form-control" value="${dados.dados.NUMERO}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Telefone" class="form-control" value="${dados.dados.TELEFONE}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Celular" class="form-control" value="${dados.dados.CELULAR}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" class="form-control" value="${dados.dados.EMAIL}">
+                        </div>
+                    </div>`
 
-                        if (dado.dados.ativo == "N") {
-                            $('#ativo').removeAttr('checked')
-                        }
-
-                        $('#idcategoria').val(dado.dados.idcategoria)
-
-                    })
-                    $('.btn-save').hide()
+                    $('.modal-body').html(servicos)
+                    $('#cadastro').modal('show')
+                    $('#btn-save').hide()
                     $('.btn-update').show()
-                    $('#modal-categoria').modal('show')
+                    $('#mod').modal('show')
                 } else {
                     Swal.fire({
-                        title: 'appAulaDS',
-                        text: dado.mensagem,
-                        type: dado.tipo,
+                        title: 'Services',
+                        text: dados.mensagem,
+                        type: dados.tipo,
                         confirmButtonText: 'OK'
                     })
                 }
