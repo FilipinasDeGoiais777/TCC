@@ -10,7 +10,7 @@ if(!$conexao){
 } else{
 
     $requestData = $_REQUEST;
-
+    
     if(empty($requestData['NOME']) || empty($requestData['TIPO'])  || empty($requestData['BAIRRO'])  || empty($requestData['RUA'])
     || empty($requestData['NUMERO'])  || empty($requestData['TELEFONE']) || empty($requestData['CELULAR'])  || empty($requestData['EMAIL']) ){
         $dados = array(

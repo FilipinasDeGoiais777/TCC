@@ -1,7 +1,9 @@
 $(document).ready(function() {
-    console.log("Teste")
 
-    $('.view-servico').click(function(e) {
+    $('#conteudo').on('click', 'button.view-servico', function(e) {
+
+
+        //$('.view-servico').click(function(e) {
 
         e.preventDefault()
         console.log('Passei')
@@ -21,35 +23,34 @@ $(document).ready(function() {
             url: 'src/servico/modelo/view-servico.php',
             success: function(dados) {
                 if (dados.tipo == "success") {
-                    $('#conteudo').empty()
                     let servicos = `<div class="modal-body">
                         <div class="form-group">
-                            <input type="text" placeholder="Nome" class="form-control" value="${servico.NOME}">
+                            <input type="text" placeholder="Nome" class="form-control" value="${dados.dados.NOME}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Tipo serviço" class="form-control" value="${servico.TIPO}">
+                            <input type="text" placeholder="Tipo serviço" class="form-control" value="${dados.dados.TIPO}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Bairro" class="form-control" value="${servico.BAIRRO}">
+                            <input type="text" placeholder="Bairro" class="form-control" value="${dados.dados.BAIRRO}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Rua" class="form-control" value="${servico.RUA}">
+                            <input type="text" placeholder="Rua" class="form-control" value="${dados.dados.RUA}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Número" class="form-control" value="${servico.NUMERO}">
+                            <input type="text" placeholder="Número" class="form-control" value="${dados.dados.NUMERO}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Telefone" class="form-control" value="${servico.TELEFONE}">
+                            <input type="text" placeholder="Telefone" class="form-control" value="${dados.dados.TELEFONE}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Celular" class="form-control" value="${servico.CELULAR}">
+                            <input type="text" placeholder="Celular" class="form-control" value="${dados.dados.CELULAR}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control" value="${servico.EMAIL}">
+                            <input type="text" placeholder="Email" class="form-control" value="${dados.dados.EMAIL}">
                         </div>
                     </div>`
 
-                    $('#conteudo').html(servicos)
+                    $('.modal-body').html(servicos)
                     $('#telacliente').modal('show')
                 } else {
                     alert(dados.mensagem)

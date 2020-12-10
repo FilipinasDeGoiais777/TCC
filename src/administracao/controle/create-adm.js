@@ -4,6 +4,7 @@ $(document).ready(function() {
         e.preventDefault()
 
         let dados = $('#form-adm').serialize()
+        console.log(dados)
 
         $.ajax({
             type: 'POST',

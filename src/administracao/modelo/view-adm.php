@@ -14,7 +14,7 @@
         if($resultado && mysqli_num_rows($resultado) > 0){
 
             while($linha = mysqli_fetch_assoc($resultado)){
-                $dadosServico = array_map('utf8_encode', $linha);
+                $dadosServico = $linha;
             }
 
             $dados = array(

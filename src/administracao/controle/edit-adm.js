@@ -8,13 +8,13 @@ $(document).ready(function() {
 
         $('.modal-title').append('Edição do serviço')
 
-        let idcategoria = `ID=${$(this).attr('ID')}`
+        let ID = `ID=${$(this).attr('id')}`
 
         $.ajax({
             type: 'POST',
             dataType: 'JSON',
             assync: true,
-            data: idcategoria,
+            data: ID,
             url: 'src/administracao/modelo/view-adm.php',
             success: function(dado) {
                 if (dado.tipo == "success") {

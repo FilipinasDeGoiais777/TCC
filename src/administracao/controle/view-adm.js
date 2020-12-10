@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.btn-view').click(function(e) {
+    $('#table-adm').on('click', 'button.btn-view', function(e) {
         e.preventDefault()
 
         $('.modal-title').empty()
@@ -15,73 +15,41 @@ $(document).ready(function() {
             dataType: 'JSON',
             assync: true,
             data: ID,
-            url: 'src/servico/modelo/view-adm.php',
+            url: 'src/administracao/modelo/view-adm.php',
             success: function(dados) {
                 if (dados.tipo == "success") {
-                    $('#conteudo').empty()
                     let servicos = `<div class="modal-body">
                         <div class="form-group">
-                            <input type="text" placeholder="Nome" class="form-control" value="${servico.NOME}">
+                            <input type="text" placeholder="Nome" class="form-control" value="${dados.dados.NOME}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Tipo serviço" class="form-control" value="${servico.TIPO}">
+                            <input type="text" placeholder="Tipo serviço" class="form-control" value="${dados.dados.TIPO}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Bairro" class="form-control" value="${servico.BAIRRO}">
+                            <input type="text" placeholder="Bairro" class="form-control" value="${dados.dados.BAIRRO}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Rua" class="form-control" value="${servico.RUA}">
+                            <input type="text" placeholder="Rua" class="form-control" value="${dados.dados.RUA}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Número" class="form-control" value="${servico.NUMERO}">
+                            <input type="text" placeholder="Número" class="form-control" value="${dados.dados.NUMERO}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Telefone" class="form-control" value="${servico.TELEFONE}">
+                            <input type="text" placeholder="Telefone" class="form-control" value="${dados.dados.TELEFONE}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Celular" class="form-control" value="${servico.CELULAR}">
+                            <input type="text" placeholder="Celular" class="form-control" value="${dados.dados.CELULAR}">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control" value="${servico.EMAIL}">
+                            <input type="text" placeholder="Email" class="form-control" value="${dados.dados.EMAIL}">
                         </div>
                     </div>`
 
-                    $('#conteudo').html(servicos)
+                    $('.modal-body').html(servicos)
                     $('#cadastro').modal('show')
                 } else {
                     alert(dados.mensagem)
                 }
-                // success: function(dado) {
-                //     if (dado.tipo == "success") {
-                //         $('.modal-body').load('src/servico/visao/form-servico.html', function() {
-                //             $('#nome').val(dado.dados.NOME)
-                //             $('#nome').attr('readonly', 'true')
-                //             $('#tipo').val(dado.dados.TIPO)
-                //             $('#tipo').attr('readonly', 'true')
-                //             $('#bairro').val(dado.dados.BAIRRO)
-                //             $('#bairro').attr('readonly', 'true')
-                //             $('#rua').val(dado.dados.RUA)
-                //             $('#rua').attr('readonly', 'true')
-                //             $('#numero').val(dado.dados.NUMERO)
-                //             $('#numero').attr('readonly', 'true')
-                //             $('#telefone').val(dado.dados.TELEFONE)
-                //             $('#telefone').attr('readonly', 'true')
-                //             $('#celular').val(dado.dados.CELULAR)
-                //             $('#celular').attr('readonly', 'true')
-                //             $('#email').val(dado.dados.EMAIL)
-                //             $('#email').attr('readonly', 'true')
-                //         })
-                //         $('.btn-save').hide()
-                //         $('.btn-update').hide()
-                //         $('#modal-servico').modal('show')
-                //     } else {
-                //         Swal.fire({
-                //             title: 'appAulaDS',
-                //             text: dado.mensagem,
-                //             type: dado.tipo,
-                //             confirmButtonText: 'OK'
-                //         })
-                //     }
             }
         })
 
