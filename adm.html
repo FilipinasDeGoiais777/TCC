@@ -19,7 +19,7 @@
 
     <div class="container mt-5" id="conteudo">
         <div class="row mt-5">
-            <div class="col-12 mt-3">
+            <div class="col-13 mt-3">
                 <div class="card shadow">
                     <div class="card-header">
                         <div class="card-title row">
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div id="modal-servico" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <!--<div id="modal-servico" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
     <div class="modal fade" id="cadastro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -86,36 +86,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="form-adm">
-                        <div class="form-group">
-                            <input type="text" name="NOME" id="NOME" placeholder="Nome da empresa" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="TIPO" id="TIPO" placeholder="Tipo serviço" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="BAIRRO" id="BAIRRO" placeholder="Bairro" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="RUA" id="RUA" placeholder="Rua" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="NUMERO" id="NUMERO" placeholder="Número" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="TELEFONE" id="TELEFONE" placeholder="Telefone" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="CELULAR" id="CELULAR" placeholder="Celular" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="EMAIL" id="EMAIL" placeholder="Email" class="form-control">
-                        </div>
-                    </form>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary " id="btn-save">Salvar</button>
-                    <button type="button" class="btn btn-primary btn-update" id="editar">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary btn-save" id="btn-save">Salvar</button>
+                    <button type="button" class="btn btn-primary btn-update" id="btn-save">Salvar Alterações</button>
+
                 </div>
 
             </div>

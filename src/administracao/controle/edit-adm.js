@@ -18,7 +18,7 @@ $(document).ready(function() {
             url: 'src/administracao/modelo/view-adm.php',
             success: function(dados) {
                 if (dados.tipo == "success") {
-                    let servicos = `<div class="modal-body">
+                    let servicos = `<form id="form-adm">
                         <div class="form-group">
                             <input type="text" placeholder="Nome" class="form-control" value="${dados.dados.NOME}">
                         </div>
@@ -43,13 +43,12 @@ $(document).ready(function() {
                         <div class="form-group">
                             <input type="text" placeholder="Email" class="form-control" value="${dados.dados.EMAIL}">
                         </div>
-                    </div>`
+                    </form>`
 
                     $('.modal-body').html(servicos)
-                    $('#cadastro').modal('show')
                     $('#btn-save').hide()
                     $('.btn-update').show()
-                    $('#mod').modal('show')
+                    $('#cadastro').modal('show')
                 } else {
                     Swal.fire({
                         title: 'Services',

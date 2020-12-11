@@ -1,11 +1,9 @@
 $(document).ready(function() {
-    $('#btn-save').click(function(e) {
+    $('.btn-save').click(function(e) {
+
         e.preventDefault()
 
-
-
         let dados = $('#form-cad').serialize()
-
 
         $.ajax({
             type: 'POST',

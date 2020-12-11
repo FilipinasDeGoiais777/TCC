@@ -48,8 +48,9 @@ $(document).ready(function() {
                     </div>`
 
                     $('.modal-body').html(servicos)
+                    $('.btn-save').hide()
                     $('#telacliente').modal('show')
-                    $('#btn-save').hide()
+
                 } else {
                     alert(dados.mensagem)
                 }

@@ -4,9 +4,9 @@ $(document).ready(function() {
         e.preventDefault()
         $('.modal-title').empty()
         $('.modal-body').empty()
-        $('#btn-save').show()
 
-        let dados = $('#form-adm').serialize()
+
+        let dados = $('#form-cad').serialize()
 
         $.ajax({
             type: 'POST',
@@ -22,8 +22,6 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })
                 $('#cadastro').modal('hide')
-                $('.btn-update').hide()
-                $('#btn-save').show()
                 $('#table-servico').DataTable().ajax.reload()
             }
         })

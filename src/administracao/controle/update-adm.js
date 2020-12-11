@@ -1,8 +1,9 @@
 $(document).ready(function() {
-    $('#table-adm').on('click', 'button.btn-update', function(e) {
+    $('.btn-update').click(function(e) {
+        console.log("Passei aqui")
         e.preventDefault()
-
-        let dados = $('#form-adm').serialize()
+        console.log(document.getElementById('form-adm'))
+        let dados = new FormData(document.getElementById('form-adm'))
 
         $.ajax({
             type: 'POST',

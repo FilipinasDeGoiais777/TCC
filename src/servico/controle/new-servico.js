@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         $('.modal-body').load('src/servico/visao/form-servico.html', function() {})
 
-
+        $('.btn-save').show()
         $('#telacliente').modal('show')
     })
 })
