@@ -3,6 +3,10 @@ $(document).ready(function() {
 
         e.preventDefault()
 
+        console.log($('#form-adm'))
+
+        let dados = $('#form-adm').serialize()
+
         $.ajax({
             type: 'POST',
             dataType: 'json',

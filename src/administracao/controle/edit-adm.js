@@ -43,6 +43,7 @@ $(document).ready(function() {
                         <div class="form-group">
                             <input type="text" placeholder="Email" name="Email" id="Email" class="form-control" value="${dados.dados.EMAIL}">
                         </div>
+                        <input type="hidden" name="Id" id="Id" value="${dados.dados.ID}">
                     </form>`
 
                     $('.modal-body').html(servicos)

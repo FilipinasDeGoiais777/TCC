@@ -5,21 +5,25 @@
     if($conexao){
 
         $requestData = $_REQUEST;
-        echo "<pre>";
-        print_r($requestData);
-        echo "</pre>";
-        exit;
+        // echo "<pre>";
+        // print_r($requestData);
+        // echo "</pre>";
+        // exit;
+
+        $id = isset($requestData['Id']) ? $requestData['Id'] : '';
         
-        if(empty($requestData['NOME']) || empty($requestData['TIPO'])  || empty($requestData['BAIRRO'])  || empty($requestData['RUA'])
-    || empty($requestData['NUMERO'])  || empty($requestData['TELEFONE']) || empty($requestData['CELULAR'])  || empty($requestData['EMAIL']) ){
+        if(empty($requestData['Nome']) || empty($requestData['Tipo'])  || empty($requestData['Bairro'])  || empty($requestData['Rua'])
+    || empty($requestData['Numero'])  || empty($requestData['Telefone']) || empty($requestData['Celular'])  || empty($requestData['Email']) ){
             $dados = array(
                 "tipo" => "info",
                 "mensagem" => "Existe(m) campo(s) obrigatório(s) em branco."
             );
         } else{
 
-            $sql = "UPDATE SERVICO SET NOME = '$requestData[NOME]', TIPO = '$requestData[TIPO]', BAIRRO = '$requestData[BAIRRO]', RUA = '$requestData[RUA]', NUMERO = '$requestData[NUMERO]',
-            TELEFONE = '$requestData[TELEFONE]', CELULAR = '$requestData[CELULAR]', EMAIL = '$requestData[EMAIL]' WHERE ID = $id ";
+            $sql = "UPDATE SERVICO SET NOME = '$requestData[Nome]', TIPO = '$requestData[Tipo]', BAIRRO = '$requestData[Bairro]', RUA = '$requestData[Rua]', NUMERO = '$requestData[Numero]',
+            TELEFONE = '$requestData[Telefone]', CELULAR = '$requestData[Celular]', EMAIL = '$requestData[Email]' WHERE ID = $id ";
+
+            // echo $sql; exit;
 
             $resultado = mysqli_query($conexao, $sql);
 
