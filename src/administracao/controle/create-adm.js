@@ -1,10 +1,7 @@
 $(document).ready(function() {
+    $('.btn-save').click(function(e) {
 
-    $('#btn-save').click(function(e) {
         e.preventDefault()
-        $('.modal-title').empty()
-        $('.modal-body').empty()
-
 
         let dados = $('#form-cad').serialize()
 
@@ -22,7 +19,7 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })
                 $('#cadastro').modal('hide')
-                $('#table-servico').DataTable().ajax.reload()
+                $('#table-adm').DataTable().ajax.reload()
             }
         })
     })

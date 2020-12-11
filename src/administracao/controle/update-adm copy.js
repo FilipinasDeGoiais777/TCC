@@ -1,8 +1,12 @@
 $(document).ready(function() {
     $('.btn-update').click(function(e) {
-
+        console.log("Passei aqui")
         e.preventDefault()
+        let form = document.getElementById('form-adm')
+        let dados = $("#form-adm")
 
+        console.log(form)
+        console.log(dados)
         $.ajax({
             type: 'POST',
             dataType: 'json',
